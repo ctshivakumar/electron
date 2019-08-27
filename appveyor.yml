@@ -119,5 +119,5 @@ deploy_script:
           & python script\upload.py
         }
       } elseif (Test-Path Env:\TEST_WOA) {
-        node script/release/ci-release-build.js --job=electron-woa-testing --ci=VSTS --armTest --appveyorJobId=$env:APPVEYOR_JOB_ID $env:APPVEYOR_REPO_BRANCH
+        node script/ci-release-build.js --job=electron-woa-testing --ci=VSTS --armTest --appveyorJobId=$env:APPVEYOR_JOB_ID $env:APPVEYOR_REPO_BRANCH
       }
