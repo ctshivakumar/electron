@@ -857,7 +857,6 @@ void App::SetAppLogsPath(util::ErrorThrower thrower,
   } else {
     base::FilePath path;
     if (base::PathService::Get(DIR_USER_DATA, &path)) {
-      path = path.Append(base::FilePath::FromUTF8Unsafe(GetApplicationName()));
       path = path.Append(base::FilePath::FromUTF8Unsafe("logs"));
       base::PathService::Override(DIR_APP_LOGS, path);
     }
